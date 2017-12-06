@@ -1,0 +1,35 @@
+
+{% extends "homepage.html" %}
+
+{% block body_base %}
+<main>
+    <section id="content-section">
+        <div id="content-body">
+            <h2 class="text-center">List of Patrols</h2>
+            <p class="lead">
+                {% if all_patrols %}
+                    <ul>
+                    {% for patrol in all_patrols %}
+                        <li>
+                            <a href="{% url 'patrols:detail' patrol.id %}">
+                                {{ patrol }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No patrols in troop :-(</p>
+                {% endif %}
+            </p>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <p class="see-more lead text-center">
+                [ lower section content ]
+            </p>
+        </div>
+    </section>
+</main>
+{% endblock %}
+
