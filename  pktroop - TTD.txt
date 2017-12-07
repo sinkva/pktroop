@@ -36,3 +36,9 @@ in general
 add csv import capability
 add "django-debug-toolbar" to basic setup
 read "Django Design Patterns and Best Practices [Ravindran 2015-03-26]"
+
+forms:
+    https://tutorial.djangogirls.org/en/django_forms/
+
+AJAX:
+    https://www.tutorialspoint.com/django/django_ajax.htm
