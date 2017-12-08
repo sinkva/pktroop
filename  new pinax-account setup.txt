@@ -1,0 +1,79 @@
+# make sure that these are already installed 
+#     python v3.6+
+#     virtualenv 
+#     run the /Applications/Python 3.6/Install Certificates.command
+#       cd /Applications/Python\ 3.6/
+#       ./Install\ Certificates.command 
+# 
+# -------------------------------------------------
+# 
+# from ***bare*** -- nothing, nada, zilch
+# based on: http://pinaxproject.com/pinax/quick_start_manual/
+# 
+# -------------------------------------------------
+
+mkdir pktroop
+# creating a "pktroop" project directory...
+cd pktroop
+# virtualenv pktroop_env
+python3 -m venv pktroop_env
+source pktroop_env/bin/activate
+
+# make sure python resolves to python 3
+python
+
+pip install django
+
+django-admin startproject --template=https://github.com/pinax/pinax-starter-projects/zipball/account pktroop -n webpack.config.js
+
+# delete higher-lever virtualenv? In dir that hase only two folders?
+deactivate
+rm -fr pktroop_env
+
+# go into the level of "manage.py"
+cd pktroop
+
+# recreate the virtual environment, with django - one level down
+python3 -m venv pktroop_env
+source pktroop_env/bin/activate
+pip install django
+
+pip install -r requirements.txt
+chmod +x manage.py
+./manage.py migrate
+./manage.py loaddata sites
+./manage.py runserver
+
+# Verify that we now have a running Django site, complete with account management
+open http://localhost:8000
+
+# BUT no bootstrap-based templates
+# So...
+# based on http://pinaxproject.com/pinax/pinax_theme_bootstrap/
+
+npm init  # taking all defaults
+# hit "return" many times, then "yes"
+
+npm install popper.js --save
+npm install bootstrap font-awesome jquery --save  # the core libraries we need
+npm install webpack  --save # the builder
+npm install extract-text-webpack-plugin --save  # plugin to break apart files
+npm install css-loader style-loader file-loader less-loader babel-loader --save
+
+npm install
+npm run build
+
+# now we should have a pretty-looking pinax-account basic website
+open http://localhost:8000
+
+# create a superuser
+python manage.py createsuperuser
+
+# -------------------------------------- 
+#
+# git stuff
+git config --global user.name "Tim Kuo"
+git config --global user.email github@kuo1.com
+git config --global core.editor "bbedit --wait --resume"
+
+
