@@ -1,0 +1,47 @@
+
+superuser == qwe
+    password: f(dj)
+
+regular user == poi
+
+pktroop website
+    http://localhost:8000
+    based on pinax account
+    
+# cd /Users/tim/Desktop/pinax_ktroop
+# source pinax_ktroop_env/bin/activate
+#     npm install
+#     pip install -r requirements.txt
+#     ./manage.py migrate
+#     ./manage.py loaddata sites
+#     npm run dev
+
+# cd /Users/tim/Desktop/pinax_ktroop
+# source pinax_ktroop_env/bin/activate
+# cd pktroop
+# npm run dev
+#     http://localhost:3000
+
+-------------------------------------------------
+
+
+cd /Users/tim/Desktop/pinax_ktroop/pktroop
+source pktroop_env/bin/activate
+(sleep 2; open http://localhost:8000)&
+python manage.py runserver
+
+
+-------------------------------------------------
+
+
+    http://localhost:8000
+
+# same level as "manage.py"
+python manage.py makemigrations
+python manage.py migrate
+
+
+-------------------------------------------------
+
+you can find Django (the default templates and applications) here:
+    cd /Users/tim/Desktop/pinax_ktroop/pinax_ktroop_env/lib/python3.6/site-packages/django

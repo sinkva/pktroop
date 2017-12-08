@@ -1,0 +1,54 @@
+
+{% extends "homepage.html" %}
+
+{% block body_base %}
+<main>
+    <section id="content-section">
+        <div id="content-body">
+            <span>
+                <a style="font-size: 200%;" class="text-center">{{ profile }}</a>
+                [ <a href="{% url 'profiles:update' profile.id %}">update</a> ]
+            </span>
+            <p class="lead" style="margin: 0px;">
+                {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+                <br>
+                Joined: {{ profile.join_troop_date }}
+
+                <br>
+                {% if profile.address %}
+                    Address: {{ profile.address }}
+                {% else %}
+                    No address for {{ profile }} :-(
+                {% endif %}
+
+                <br>
+                {% if related_patrol_membership %}
+                Patrols:
+                <ul style="margin: 0px;">
+                {% for r in related_patrol_membership %}
+                    <li><a href="{% url 'patrols:detail' r.patrol.id %}">{{ r.patrol }}:</a>
+                    ({{ r.date_joined }} - 
+                    {% if r.date_left %}
+                        {{ r.date_left }})</li>
+                    {% else %}
+                        Present)</li>
+                    {% endif %}
+                {% endfor %}
+                </ul>
+                {% else %}
+                    {{ profile }} not assigned to any patrol :-(
+                {% endif %}
+            </p>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <p class="see-more lead text-center">
+                [ lower section content ]
+            </p>
+        </div>
+    </section>
+</main>
+{% endblock %}
+

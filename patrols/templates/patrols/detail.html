@@ -1,0 +1,49 @@
+
+{% extends "homepage.html" %}
+
+{% block body_base %}
+<main>
+    <section id="content-section">
+        <div id="content-body">
+            <span>
+                <a style="font-size: 200%;" class="text-center">{{ patrol }}</a>
+                [ <a href="{% url 'patrols:update' patrol.id %}">update</a> ]
+            </span>
+
+<!-- 
+            <h2 class="text-center">{{ patrol }} Patrol</h2>
+ -->
+            <p class="lead" style="margin: 0px;">
+                {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+                <br>
+                {% if related_patrol_membership %}
+                Scouts:
+                    <ul>
+                    {% for r in related_patrol_membership %}
+<!--                         <li>{{ r.patrol }}:  -->
+                        <li><a href="{% url 'profiles:detail' r.scout.profile.id %}">{{ r.scout.profile }}:</a>
+                        ({{ r.date_joined }} - 
+                        {% if r.date_left %}
+                            {{ r.date_left }})</li>
+                        {% else %}
+                            Present)</li>
+                        {% endif %}
+                    {% endfor %}
+                    </ul>
+                {% else %}
+                    {{ patrol }} has no members :-(
+                {% endif %}
+            </p>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <p class="see-more lead text-center">
+                [ lower section content ]
+            </p>
+        </div>
+    </section>
+</main>
+{% endblock %}
+

@@ -1,0 +1,16 @@
+<textarea onclick="this.focus();this.select()" style="width: 50%;">
+    {% filter force_escape %}
+    {% debug %}
+    {% endfilter %}
+</textarea>
+
+<br />
+<br />
+
+{% for name, value in object.get_fields %}
+  {% if value %}
+    {{ name }} => {{ value }}<br />
+  {% endif %}
+{% endfor %}
+
+{{ object.user.first_name }}

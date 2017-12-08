@@ -1,0 +1,44 @@
+
+add popup modal dialogs ???
+    create
+    read
+    update
+    delete
+
+-------------------------------------------------
+
+scout/index
+    show all "college reserve", alpha by last_name
+    show all adults/parents, alpha by last_name
+    add a scout
+
+scout/detail
+    name editing: dialog box (Are you sure?)
+    address editing: dialog box (Are you sure?)
+    show full address
+        link to address editing
+    
+patrol/index
+    show scouts in each patrol
+    show scouts not in any patrol
+    show "college reserve" patrol
+    add a patrol
+
+patrol/detail
+    show scouts in this specific patrol
+
+
+-------------------------------------------------
+
+in general
+==========
+
+add csv import capability
+add "django-debug-toolbar" to basic setup
+read "Django Design Patterns and Best Practices [Ravindran 2015-03-26]"
+
+forms:
+    https://tutorial.djangogirls.org/en/django_forms/
+
+AJAX:
+    https://www.tutorialspoint.com/django/django_ajax.htm
