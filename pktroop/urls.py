@@ -5,10 +5,6 @@ from django.views.generic import TemplateView
 
 from django.contrib import admin
 
-# from .views import SignupView
-
-
-
 urlpatterns = [
     url(r"^$", TemplateView.as_view(template_name="homepage.html"), name="home"),
     url(r"^admin/", include(admin.site.urls)),
