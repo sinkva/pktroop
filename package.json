@@ -2,7 +2,11 @@
   "repository": {
     "type": "git",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "url": "git+https://github.com/pinax/pinax-project.git"
+=======
+    "url": "https://github.com/pinax/pinax-project"
+>>>>>>> 71b044e736770e240fd8868231099a3e288720bc
 =======
     "url": "https://github.com/pinax/pinax-project"
 >>>>>>> 71b044e736770e240fd8868231099a3e288720bc
@@ -32,10 +36,16 @@
   "dependencies": {
     "babel-core": "6.26.0",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "babel-loader": "^7.1.2",
     "babel-preset-env": "1.6.1",
     "babelify": "8.0.0",
     "bootstrap": "^4.0.0-beta.2",
+=======
+    "babel-preset-env": "1.6.1",
+    "babelify": "8.0.0",
+    "bootstrap": "4.0.0-beta.2",
+>>>>>>> 71b044e736770e240fd8868231099a3e288720bc
 =======
     "babel-preset-env": "1.6.1",
     "babelify": "8.0.0",
@@ -46,7 +56,10 @@
     "chai": "4.1.2",
     "concurrently": "3.5.0",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "css-loader": "^0.28.7",
+=======
+>>>>>>> 71b044e736770e240fd8868231099a3e288720bc
 =======
 >>>>>>> 71b044e736770e240fd8868231099a3e288720bc
     "cssnano": "3.10.0",
@@ -55,6 +68,7 @@
     "eslint": "4.11.0",
     "eslint-plugin-babel": "4.1.2",
     "exorcist": "1.0.0",
+<<<<<<< HEAD
 <<<<<<< HEAD
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.5",
@@ -82,6 +96,8 @@
   "main": "index.js",
   "author": ""
 =======
+=======
+>>>>>>> 71b044e736770e240fd8868231099a3e288720bc
     "font-awesome": "4.7.0",
     "jquery": "3.2.1",
     "jsdom": "11.3.0",
@@ -92,5 +108,8 @@
     "uglify-js": "3.1.10",
     "watchify": "3.9.0"
   }
+<<<<<<< HEAD
+>>>>>>> 71b044e736770e240fd8868231099a3e288720bc
+=======
 >>>>>>> 71b044e736770e240fd8868231099a3e288720bc
 }
