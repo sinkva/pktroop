@@ -18,6 +18,10 @@ class Address(models.Model):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+
+# Django Design Patterns and Best Practices:
+# user = models.OneToOneField(settings.AUTH_USER_MODEL, primary_key=True)    
+    
 #     bio = models.TextField(max_length=500, blank=True)
 #     biography = models.TextField(max_length=100, blank=True)
 #     location = models.CharField(max_length=30, blank=True)

@@ -49,10 +49,12 @@
     <div style="float:left;">
         <a href="{% url 'profiles:index' %}">Scout Roster</a><br />
         <a href="{% url 'patrols:index' %}">Patrol List</a><br />
+{% comment %}        
+        <a href="{% url 'admin' %}">Admin</a><br />
+{% endcomment %}
         {% include "_footer.html" %}
     </div>
     
-    {% load static %}
     <div style="float:right;">
         {% spaceless %}
         <img src="{% static "images/Unit Number 9.jpg" %}" alt="Unit Number 9" height="50" />
