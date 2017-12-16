@@ -47,3 +47,15 @@ AJAX:
 
 import T956 roster info
     CSV file
+
+authorization - figure out
+  "membership" and "ASM" group can edit all info
+  each person can edit their own info
+
+Modal popup dialog
+  forms
+
+default Bootstrap button
+  understand base.html
+
+static image files don't display :-(

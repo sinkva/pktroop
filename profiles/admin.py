@@ -1,11 +1,19 @@
 from django.contrib import admin
-
-# Register your models here.
-
 from .models import Profile, Address
-# , Patrol, Patrol_Membership
+from django.contrib.auth.models import User
 
 admin.site.register(Profile)
 admin.site.register(Address)
-# admin.site.register(Patrol)
-# admin.site.register(Patrol_Membership)
+
+# --------------------------------------
+
+# from Django Design Patterns and Best Practices:
+
+# class UserProfileInline(admin.StackedInline):
+#     model = Profile
+# 
+# class UserAdmin(admin.UserAdmin):
+#     inlines = [UserProfileInline]
+# 
+# admin.site.unregister(User)
+# admin.site.register(User, UserAdmin)

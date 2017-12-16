@@ -138,6 +138,8 @@ INSTALLED_APPS = [
     "patrols",
 ]
 
+CRISPY_TEMPLATE_PACK = "bootstrap3"
+
 ADMIN_URL = "admin:index"
 CONTACT_EMAIL = "support@example.com"
 
@@ -197,6 +199,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(PROJECT_ROOT, "static", "dist"),
 #     os.path.join(BASE_DIR, "static",),
-#     "/static/",
+    "/static/",
 ]
 
