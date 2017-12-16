@@ -1,3 +1,7 @@
+# Kuo specific
+*.xls
+
+# ------------------------------------------------- 
 *.pyc
 node_modules/
 dev.db
