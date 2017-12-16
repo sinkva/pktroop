@@ -7,6 +7,7 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r"^$", TemplateView.as_view(template_name="homepage.html"), name="home"),
+    url(r'^grappelli/', include('grappelli.urls')), # grappelli URLS
     url(r"^admin/", include(admin.site.urls)),
 #     url(r"^account/signup/$", SignupView.as_view(), name="account_signup"),
     url(r"^account/", include("account.urls")),

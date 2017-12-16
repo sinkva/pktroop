@@ -113,6 +113,7 @@ ROOT_URLCONF = "pktroop.urls"
 WSGI_APPLICATION = "pktroop.wsgi.application"
 
 INSTALLED_APPS = [
+    'grappelli',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -123,6 +124,7 @@ INSTALLED_APPS = [
 
     # templates
     "bootstrapform",
+    "bootstrap3",
     "pinax.templates",
 
     # external

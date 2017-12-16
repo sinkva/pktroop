@@ -6,6 +6,17 @@
 {% load pinax_webanalytics_tags %}
 {% load i18n %}
 
+    {# Load the tag library #}
+    Load the tag library
+    {% load bootstrap3 %}
+    load bootstrap3
+
+    {# Load CSS and JavaScript #}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+    {# Display django.contrib.messages as Bootstrap alerts #}
+    {% bootstrap_messages %}
 
 {% block styles %}
     <link href="{% static "css/app.css" %}" rel="stylesheet" />
