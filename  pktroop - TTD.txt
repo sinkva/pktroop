@@ -1,4 +1,10 @@
 
+Set up a better project settings approach
+    array?
+
+Slugs
+    put slugs in URLs?
+
 add popup modal dialogs ???
     create
     read

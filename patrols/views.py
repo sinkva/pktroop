@@ -7,11 +7,14 @@ from django.forms.models import modelform_factory
 
 from .models import Patrol, Patrol_Membership
 
+from django.contrib.auth.decorators import login_required
+
 def index(request):
     all_patrols = Patrol.objects.all()
     context = {'all_patrols': all_patrols}
     return render(request, 'patrols/index.html', context)
-    
+
+@login_required
 def detail(request, patrol_id):
     patrol = get_object_or_404(Patrol, pk=patrol_id)
     related_patrol_membership = \
@@ -29,10 +32,12 @@ def detail(request, patrol_id):
         }
     )
 
+@login_required
 def update(request, patrol_id):
     patrol = get_object_or_404(Patrol, pk=patrol_id)
     return render(request, 'patrols/update.html', {'patrol': patrol})
 
+@login_required
 def updatesave(request, patrol_id):
     if 'update' in request.POST:
         patrol = get_object_or_404(Patrol, pk=patrol_id)

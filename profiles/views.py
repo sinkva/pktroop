@@ -11,11 +11,15 @@ from patrols.models import Patrol, Patrol_Membership
 
 from django.db.models.functions import Lower
 
+from django.contrib.auth.decorators import login_required
+
+@login_required
 def index(request):
     all_profiles = Profile.objects.order_by(Lower('user__last_name'))
     context = {'all_profiles': all_profiles}
     return render(request, 'profiles/index.html', context)
 
+@login_required
 def detail(request, Profile_id):
     this_profile = get_object_or_404(Profile, pk=Profile_id)
     related_patrol_membership = \
@@ -31,10 +35,12 @@ def detail(request, Profile_id):
         } 
     )
 
+@login_required
 def update(request, Profile_id):
     this_profile = get_object_or_404(Profile, pk=Profile_id)
     return render(request, 'profiles/update.html', { 'profile': this_profile })
 
+@login_required
 def updatesave(request, Profile_id):
     if 'update' in request.POST:
         profile = get_object_or_404(Profile, pk=Profile_id)

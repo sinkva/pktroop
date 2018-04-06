@@ -9,6 +9,29 @@
                 <a style="font-size: 200%;" class="text-center">{{ profile }}</a>
                 [ <a href="{% url 'profiles:update' profile.id %}">update</a> ]
             </span>
+
+
+            <hr>
+            username: "{{ profile.user.username }}"<br>
+            first_name: "{{ profile.user.first_name }}"<br>
+            last_name: "{{ profile.user.last_name }}"<br>
+            email: "{{ profile.user.email }}"<br>
+            password: "{{ profile.user.password }}"<br>
+            groups: "{{ profile.user.groups }}"<br>
+            user_permissions: "{{ profile.user.user_permissions }}"<br>
+            is_staff: "{{ profile.user.is_staff }}"<br>
+            is_active: "{{ profile.user.is_active }}"<br>
+            is_superuser: "{{ profile.user.is_superuser }}"<br>
+            last_login: "{{ profile.user.last_login }}"<br>
+            date_joined: "{{ profile.user.date_joined }}"<br>
+            <hr>
+            birth_date: "{{ profile.birth_date }}"<br>
+            middle_name: "{{ profile.middle_name }}"<br>
+            join_troop_date: "{{ profile.join_troop_date }}"<br>
+            address: "{{ profile.address }}"<br>
+            <hr>
+
+
             <p class="lead" style="margin: 0px;">
                 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 

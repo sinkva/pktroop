@@ -200,3 +200,5 @@ STATICFILES_DIRS = [
     "/static/",
 ]
 
+LOGIN_URL = '/account/login/'
+
