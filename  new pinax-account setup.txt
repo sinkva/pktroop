@@ -78,4 +78,5 @@ git config --global core.editor "bbedit --wait --resume"
 
 git status
 git add *
+git commit
 git push origin master
