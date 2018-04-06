@@ -79,4 +79,13 @@ git config --global core.editor "bbedit --wait --resume"
 git status
 git add *
 git commit
+
+# for the study desktop
 git push origin master
+# or
+git pull origin master
+
+# for the travel laptop
+git push hub master
+# or
+git pull hub master
