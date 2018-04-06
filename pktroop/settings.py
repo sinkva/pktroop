@@ -105,6 +105,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.SessionAuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = "pktroop.urls"
@@ -113,6 +114,7 @@ ROOT_URLCONF = "pktroop.urls"
 WSGI_APPLICATION = "pktroop.wsgi.application"
 
 INSTALLED_APPS = [
+    'grappelli',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -123,12 +125,16 @@ INSTALLED_APPS = [
 
     # templates
     "bootstrapform",
+    "bootstrap3",
     "pinax.templates",
 
     # external
     "account",
     "pinax.eventlog",
     "pinax.webanalytics",
+
+    # kuo generic
+    'debug_toolbar',
 
     # project
     "pktroop",
@@ -196,9 +202,13 @@ STATIC_URL = '/static/'
 # Additional locations of static files
 STATICFILES_DIRS = [
     os.path.join(PROJECT_ROOT, "static", "dist"),
-#     os.path.join(BASE_DIR, "static",),
+    os.path.join(PROJECT_ROOT, "static",),
     "/static/",
 ]
 
 LOGIN_URL = '/account/login/'
 
+# django-debug-toolbar
+INTERNAL_IPS = [
+    '127.0.0.1',
+]

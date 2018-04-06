@@ -3,7 +3,7 @@ superuser == qwe
     password: f(dj)
     laptop password: qwe
 
-regular user == poi
+regular user == poi/poi
 
 pktroop website
     http://localhost:8000

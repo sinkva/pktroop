@@ -12,6 +12,8 @@ add popup modal dialogs ???
     delete
 
 -------------------------------------------------
+why don't buttons show differently? (normal/highlighted)
+-------------------------------------------------
 
 scout/index
     show all "college reserve", alpha by last_name
@@ -49,7 +51,8 @@ forms:
 AJAX:
     https://www.tutorialspoint.com/django/django_ajax.htm
 
-
+import T956 roster info
+    CSV file
 
 authorization - figure out
   "membership" and "ASM" group can edit all info

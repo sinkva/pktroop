@@ -12,6 +12,8 @@ class Address(models.Model):
     city = models.CharField(max_length=50)
     state = models.CharField(max_length=20)
     zipcode = models.CharField(max_length=10)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.street1
@@ -29,6 +31,8 @@ class Profile(models.Model):
     middle_name = models.CharField(max_length=50, null=True, blank=True)
     join_troop_date = models.DateTimeField('date joined troop', null=True, blank=True)
     address = models.ForeignKey(Address, on_delete=models.CASCADE, null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     
     def get_fields(self):
         return [(field.name, field.value_to_string(self)) for field in Profile._meta.fields]
