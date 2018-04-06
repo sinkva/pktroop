@@ -76,4 +76,6 @@ git config --global user.name "Tim Kuo"
 git config --global user.email github@kuo1.com
 git config --global core.editor "bbedit --wait --resume"
 
-
+git status
+git add *
+git push origin master
