@@ -13,6 +13,7 @@ urlpatterns = [
     url(r"^account/", include("account.urls")),
     url(r"^profiles/", include("profiles.urls")),
     url(r"^patrols/", include("patrols.urls")),
+    url(r"^events/", include("events.urls")),
 ]
 
 # django-debug-toolbar

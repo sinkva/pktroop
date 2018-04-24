@@ -70,8 +70,8 @@ open http://localhost:8000
 python manage.py createsuperuser
 
 # -------------------------------------- 
-#
 # git stuff
+
 git config --global user.name "Tim Kuo"
 git config --global user.email github@kuo1.com
 git config --global core.editor "bbedit --wait --resume"

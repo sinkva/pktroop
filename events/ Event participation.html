@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+body {
+    font-family: Sans-Serif;
+    margin: 0 auto;
+    width: 1000px;
+}
+table {
+    border-collapse: collapse;
+    width: 1000px;
+}
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+textarea {
+    max-width: 200px; 
+    max-height: 100px;
+}
+
+input[type="radio"].green_when_checked:checked + label {
+     background-color: lightgreen;
+     border: 1px solid lightgreen;
+}
+
+input[type="radio"].yellow_when_checked:checked + label {
+     background-color: yellow;
+     border: 1px solid yellow;
+}
+
+input[type="radio"].red_when_checked:checked + label {
+     background-color: #FF9999;
+     border: 1px solid #FF9999;
+}
+
+</style>
+</head>
+
+<body>
+<h1>
+	Penguin Patrol 
+</h1>
+<h2>
+	Patrol Leader: Joe Scout<br>
+	ASM-Patrol-Advisor: Mr. Scouter
+</h2>
+
+<a href="mailto:test@test.com?subject=[Troop 956 -- Penguin Patrol]
+&cc=president@whitehouse.gov
+&bcc=vp@whitehouse.gov
+&body=Dear Penguin Patrol,">
+    Click on this link to compose an email message<br>
+    to all patrol members, the ASM-Patrol-Advisor,<br>
+    the Scoutmaster, and the families of all patrol members</a>
+
+<br>
+<br>
+<br>
+<table border="1">
+	<tr>
+		<th>Name</th>
+		<th width=190>Going?</th>
+        <th>Reason (if not going)</th>
+        <th></th>
+        <th>Home Phone</th>
+        <th>Cell Phone</th>
+        <th>email</th>
+    </tr>
+	<tr>
+		<td>Joe Wimmergren</td>
+		<td><form action="">
+              <input type="radio" id="radio101" name="scout_1" value="YES" class="green_when_checked">
+              <label for="radio101">Yes</label>
+              <input type="radio" id="radio102" name="scout_1" value="MAYBE" class="yellow_when_checked">
+              <label for="radio102">Maybe</label>
+              <input type="radio" id="radio103" name="scout_1" value="NO" class="red_when_checked">
+              <label for="radio103">No</label>
+			</form></td>
+		<td><textarea></textarea></td>
+        <td><button type="button">UPDATE</button></td>
+        <td>703-000-0000</td>
+        <td>703-000-0000</td>
+        <td><a href="mailto:serious.tall.joe@example.com">joe@example.com</a></td>
+    </tr>
+	<tr>
+		<td>Scout #2</td>
+		<td><form action="">
+              <input type="radio" id="radio201" name="scout_1" value="YES" class="green_when_checked">
+              <label for="radio201">Yes</label>
+              <input type="radio" id="radio202" name="scout_1" value="MAYBE" class="yellow_when_checked">
+              <label for="radio202">Maybe</label>
+              <input type="radio" id="radio203" name="scout_1" value="NO" class="red_when_checked">
+              <label for="radio203">No</label>
+			</form></td>
+		<td><textarea></textarea></td>
+        <td><button type="button">UPDATE</button></td>
+        <td>703-000-0000</td>
+        <td>703-000-0000</td>
+        <td><a href="mailto:joe@example.com">joe@example.com</a></td>
+    </tr>
+	<tr>
+		<td>Scout #3</td>
+		<td><form action="">
+              <input type="radio" id="radio301" name="scout_1" value="YES" class="green_when_checked">
+              <label for="radio301">Yes</label>
+              <input type="radio" id="radio302" name="scout_1" value="MAYBE" class="yellow_when_checked">
+              <label for="radio302">Maybe</label>
+              <input type="radio" id="radio303" name="scout_1" value="NO" class="red_when_checked">
+              <label for="radio303">No</label>
+			</form></td>
+		<td><textarea></textarea></td>
+        <td><button type="button">UPDATE</button></td>
+        <td>703-000-0000</td>
+        <td>703-000-0000</td>
+        <td><a href="mailto:joe@example.com">joe@example.com</a></td>
+    </tr>
+	<tr>
+		<td>Scout #4</td>
+		<td><form action="">
+              <input type="radio" id="radio401" name="scout_1" value="YES" class="green_when_checked">
+              <label for="radio401">Yes</label>
+              <input type="radio" id="radio402" name="scout_1" value="MAYBE" class="yellow_when_checked">
+              <label for="radio402">Maybe</label>
+              <input type="radio" id="radio403" name="scout_1" value="NO" class="red_when_checked">
+              <label for="radio403">No</label>
+			</form></td>
+		<td><textarea></textarea></td>
+        <td><button type="button">UPDATE</button></td>
+        <td>703-000-0000</td>
+        <td>703-000-0000</td>
+        <td><a href="mailto:joe@example.com">joe@example.com</a></td>
+    </tr>
+	<tr>
+		<td>Scout #5</td>
+		<td><form action="">
+              <input type="radio" id="radio501" name="scout_1" value="YES" class="green_when_checked">
+              <label for="radio501">Yes</label>
+              <input type="radio" id="radio502" name="scout_1" value="MAYBE" class="yellow_when_checked">
+              <label for="radio502">Maybe</label>
+              <input type="radio" id="radio503" name="scout_1" value="NO" class="red_when_checked">
+              <label for="radio503">No</label>
+			</form></td>
+		<td><textarea></textarea></td>
+        <td><button type="button">UPDATE</button></td>
+        <td>703-000-0000</td>
+        <td>703-000-0000</td>
+        <td><a href="mailto:joe@example.com">joe@example.com</a></td>
+    </tr>
+</table>
+
+</body>
+</html>

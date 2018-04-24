@@ -1,0 +1,38 @@
+
+===================
+Event Participation
+===================
+
+get User.objects.all() # all users
+sort into scouts / adults => SortedList
+    sort scouts 
+        by patrol
+        college reserve
+        not-in-any-patrol
+    sort adults
+        ASMs, Commtitee members
+        all others
+        
+Display event
+Display SortedList of troop members
+    full name
+    with checkboxes
+        checkboxes "checked" if Event_Participation already = "yes"
+    javascript monitors for change to checkboxes
+    
+If (change to checkboxes)    
+    get event, get User.id
+    if this.checked = true
+        error check: (one or more) already exists in Event_Participation model ?
+        create new object in Event_Participation model ?
+            do this "ajax", without total page refresh
+    if this.checked = false
+        error check: (two or more) already exist in Event_Participation model ?
+        error check: (zero) exists in Event_Participation model ?
+        find existing object in Event_Participation model
+        "Are you sure" ?
+        delete object in Event_Participation model
+            do this "ajax", without total page refresh
+
+URLs - prevent straight injection
+http://localhost:8000/events/6/dbaccess/?scout=6&event=6&_=1524105638848

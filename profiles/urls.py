@@ -9,8 +9,10 @@ urlpatterns = [
     # ex: /profiles/
     url(r'^$', views.index, name='index'),
 
-    # ex: /profiles/125/
+    # ex: /profiles/dump_all_data/
+    url(r'^dump_all_data/$', views.dump_all_data, name='dump_all_data'),
 
+    # ex: /profiles/125/
     url(r'^(?P<Profile_id>[0-9]+)/$', views.detail, name='detail'),
     
     # ex: /profiles/125/update

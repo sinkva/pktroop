@@ -12,6 +12,9 @@ from patrols.models import Patrol, Patrol_Membership
 from django.db.models.functions import Lower
 
 from django.contrib.auth.decorators import login_required
+from django.core import serializers
+
+# -------------------------------------------------
 
 @login_required
 def index(request):
@@ -33,6 +36,16 @@ def detail(request, Profile_id):
         {   'profile': this_profile, 
             'related_patrol_membership': related_patrol_membership
         } 
+    )
+
+@login_required
+def dump_all_data(request):
+    data = serializers.serialize( "python", Profile.objects.all() )
+    return render(
+        request, 
+        'profiles/dump_all_data.html', 
+        {   'data': data,
+        }
     )
 
 @login_required

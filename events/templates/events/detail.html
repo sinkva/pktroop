@@ -1,0 +1,107 @@
+
+{% extends "homepage.html" %}
+
+{% block body_base %}
+<main>
+    <section id="content-section">
+        <div id="content-body">
+            <span>
+                <a style="font-size: 200%;" class="text-center">{{ event }}</a>
+                [ <a href="{% url 'events:update' event.id %}">update</a> ]
+            </span>
+            <br>
+            {{ event.start_date }} &mdash; {{ event.end_date }} 
+
+            <p class="lead" style="margin: 0px;">
+                {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+                <br>
+                {% if related_event_participation %}
+                    Scouts:
+                    <ul>
+                    {% for r in related_event_participation %}
+                        <li><a href="{% url 'profiles:detail' r.scout.profile.id %}">{{ r.scout.profile }}</a>
+                    {% endfor %}
+                    </ul>
+                {% else %}
+                    {{ event }} has no participants :-(
+                {% endif %}
+
+
+
+
+                    <form action="{% url 'events:participationsave' event.id %}" method="post" novalidate>
+                      {% csrf_token %}
+
+                        <table border="1">
+                            {% for field in form.visible_fields %}
+                              <tr>
+                                <td align=right><b>{{ field.label_tag }}</b></td>
+                                <td>
+                                  {% if field.errors %}
+                                    <ul>
+                                      {% for error in field.errors %}
+                                        <li style="color:Red">{{ error }}</li>
+                                      {% endfor %}
+                                    </ul>
+                                  {% endif %}
+
+                                  {{ field }}
+
+                                  {% if field.help_text %}
+                                    <br />{{ field.help_text }}
+                                  {% endif %}
+                                </td>
+                              </tr>
+                            {% endfor %}
+                        </table>
+
+                    <div class="db_access_status">default</div>
+
+                    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+                    <script>
+                        $('input[name="event_participants"]').click(function () {
+                            var s = this.value;
+                            var c = this.checked;
+//                             var e = "{{event.id}}";
+//                             var h = "{{request.META}}";
+//                             var g = "{{request.POST}}";
+                        
+//                             console.log( "value: " + s + "/" + this.checked + "/" + e );
+//                             console.log( "request.META: " + h );
+//                             console.log( "request.POST: " + g );
+                            
+                            $.ajax({
+                                url: 'dbaccess/',
+//                                 data: { 'scout': s, 'event': e, 'chk': c },
+                                data: { 'scout': s, 'chk': c },
+                                type: 'post',
+                                cache: false,
+                                csrfmiddlewaretoken: '{{ csrf_token }}', 
+                                success: function () {
+                                    $(".db_access_status").html('Scout:' + s + ' / Event:' + "{{event.id}}" + ' / Checked:' + c );
+                                }
+                            });
+                            
+                        });
+                    </script>
+                </form>
+
+
+
+
+
+
+
+            </p>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <p class="see-more lead text-center">
+                [ lower section content ]
+            </p>
+        </div>
+    </section>
+</main>
+{% endblock %}

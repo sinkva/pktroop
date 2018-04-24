@@ -8,6 +8,9 @@ from django.forms.models import modelform_factory
 from .models import Patrol, Patrol_Membership
 
 from django.contrib.auth.decorators import login_required
+from django.core import serializers
+
+# -------------------------------------------------
 
 def index(request):
     all_patrols = Patrol.objects.all()
@@ -29,6 +32,16 @@ def detail(request, patrol_id):
         {   'patrol': patrol, 
             'related_patrol_membership': related_patrol_membership,
             'formfac': formfac,
+        }
+    )
+
+@login_required
+def dump_all_data(request):
+    data = serializers.serialize( "python", Patrol.objects.all() )
+    return render(
+        request, 
+        'patrols/dump_all_data.html', 
+        {   'data': data,
         }
     )
 

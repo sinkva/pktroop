@@ -1,0 +1,74 @@
+
+{% extends "homepage.html" %}
+
+{% block body_base %}
+<main>
+    <section id="content-section">
+        <div id="content-body">
+            <h2 class="text-center">{{ event }}</h2>
+            <p class="lead">
+                {% if error_message %}
+                    <p><strong>{{ error_message }}</strong></p>
+                {% endif %}
+
+                <form action="{% url 'events:updatesave' event.id %}" method="post" novalidate>
+                  {% csrf_token %}
+
+                  {% if form.non_field_errors %}
+                    <ul>
+                      {% for error in form.non_field_errors %}
+                        <li ul style="color:Red">{{ error }}</li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+
+                  {% for hidden_field in form.hidden_fields %}
+                    {% if hidden_field.errors %}
+                      <ul>
+                        {% for error in hidden_field.errors %}
+                          <li style="color:Red">(Hidden field {{ hidden_field.name }}) {{ error }}</li>
+                        {% endfor %}
+                      </ul>
+                    {% endif %}
+                    {{ hidden_field }}
+                  {% endfor %}
+
+                  <table border="1">
+                    {% for field in form.visible_fields %}
+                      <tr>
+                        <td align=right><b>{{ field.label_tag }}</b></td>
+                        <td>
+                          {% if field.errors %}
+                            <ul>
+                              {% for error in field.errors %}
+                                <li style="color:Red">{{ error }}</li>
+                              {% endfor %}
+                            </ul>
+                          {% endif %}
+                          {{ field }}
+                          {% if field.help_text %}
+                            <br />{{ field.help_text }}
+                          {% endif %}
+                        </td>
+                      </tr>
+                    {% endfor %}
+                  </table>
+
+                  <button type="submit" class="btn btn-secondary" name="cancel">Cancel</button>
+                  <button type="submit" class="btn btn-primary" name="update">Save</button>
+
+                </form>
+
+            </p>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <p class="see-more lead text-center">
+                [ lower section content ]
+            </p>
+        </div>
+    </section>
+</main>
+{% endblock %}
+

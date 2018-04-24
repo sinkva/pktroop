@@ -1,11 +1,29 @@
 
-Set up a better project settings approach
+2018-04-20
+    for outings, create forms for:
+        tent assignments
+        equipment list
+        menus
+        duty roster
+
+show troop by patrol, then alpha by last_name
+
+Set up a better project "settings.py" approach
     array?
 
 Slugs
     put slugs in URLs?
 
 add popup modal dialogs ???
+
+m2m relationships
+    *** uniqueness
+    create
+    read
+    update
+    delete
+
+Models
     create
     read
     update
@@ -65,3 +83,4 @@ default Bootstrap button
   understand base.html
 
 static image files don't display :-(
+

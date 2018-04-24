@@ -114,6 +114,7 @@ ROOT_URLCONF = "pktroop.urls"
 WSGI_APPLICATION = "pktroop.wsgi.application"
 
 INSTALLED_APPS = [
+    'bootstrap_datepicker',
     'grappelli',
     "django.contrib.admin",
     "django.contrib.auth",
@@ -140,6 +141,7 @@ INSTALLED_APPS = [
     "pktroop",
     "profiles",
     "patrols",
+    "events",
 ]
 
 CRISPY_TEMPLATE_PACK = "bootstrap3"
